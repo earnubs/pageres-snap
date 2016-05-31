@@ -1,0 +1,22 @@
+name: pageres
+version: 1.0.3
+summary: Capture website screenshots
+description: >
+  Capture screenshots of websites in various resolutions. A good way to
+  make sure your websites are responsive. It's speedy and generates 100
+  screenshots from 10 different websites in just over a minute. It can
+  also be used to render SVG images.
+apps:
+  pageres:
+    command: run
+parts:
+  pageres:
+    plugin: nodejs
+    node-packages:
+      - pageres-cli
+    stage-packages:
+      - fontconfig-config
+  run:
+    plugin: copy
+    files:
+      run: .
